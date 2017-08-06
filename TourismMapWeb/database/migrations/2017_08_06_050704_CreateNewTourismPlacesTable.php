@@ -27,22 +27,21 @@ class CreateNewTourismPlacesTable extends Migration
                $table->string('address_english');
                $table->string('description_khmer');
                $table->string('description_english');
-                $table->double('latitude');
-                 $table->double('longitude');
-               $table->timestamps();
+               $table->double('latitude');
+               $table->double('longitude');
                $table->foreign('client_id')
-             ->reference('id')
-             ->on('clients')
-             ->onDelete('cascade');
-             $table->foreign('image_id')
-             ->reference('id')
-             ->on('images')
-             ->onDelete('cascade');
+                     ->reference('id')
+                     ->on('clients')
+                     ->onDelete('cascade');
+              $table->foreign('image_id')
+                    ->reference('id')
+                    ->on('images')
+                   ->onDelete('cascade');
               $table->foreign('province_id')
-             ->reference('id')
-             ->on('provinces')
-             ->onDelete('cascade');
-          
+                    ->reference('id')
+                    ->on('provinces')
+                    ->onDelete('cascade');
+              $table->timestamps();
         });
     }
 

@@ -15,13 +15,13 @@ class CreateNewProvincesTable extends Migration
     {
       Schema::create('provinces', function (Blueprint $table) {
             $table->increments('id');
-             $table->string('postal_code');
-              $table->string('title_khmer');
-               $table->string('title_english');
-                  $table->text('thumbnail');
-              $table->string('description_khmer',200);
-               $table->string('description_english',200);
-                $table->boolean('status',200);
+            $table->string('postal_code');
+            $table->string('title_khmer');
+            $table->string('title_english');
+            $table->text('thumbnail');
+            $table->string('description_khmer',200);
+            $table->string('description_english',200);
+            $table->boolean('status',200);
             $table->timestamps();
         });
     }
