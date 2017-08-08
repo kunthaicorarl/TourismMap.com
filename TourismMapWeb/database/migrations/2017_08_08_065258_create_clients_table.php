@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCientTypesTable extends Migration
+class CreateClientsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateCientTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('cient_types', function (Blueprint $table) {
+        Schema::create('clients', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title_khmer');
-            $table->string('title_english');
-            $table->string('title_english');
-            $table->text('thumbnail');
+            $table->integer('client_type_id')->unsigned();
+           $table->string('title_khmer');
+          $table->string('title_english');
+           $table->text('thumbnail');
+           $table->integer('image_id')->unsigned();
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreateCientTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cient_types');
+        Schema::dropIfExists('clients');
     }
 }
