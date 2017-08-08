@@ -26,11 +26,5 @@ class AuthApiController extends Controller
         }
         return response()->json(compact('token'));
     }
-    public function index()
-    {
-        // Retrieve all the users in the database and return them
-        $users = User::all();
-        return $users;
-    }
-
+    
 }

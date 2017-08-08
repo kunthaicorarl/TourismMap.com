@@ -22,3 +22,4 @@ Route::get('/', function (Request $request) {
 });
 Route::post('register','Auth\RegisterController@register');
 Route::post('authenticate','Auth\AuthApiController@authenticate');
+Route::get('users','Auth\AuthApiController@index');
