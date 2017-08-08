@@ -18,9 +18,24 @@ class CreateClientsTable extends Migration
             $table->integer('client_type_id')->unsigned();
            $table->string('title_khmer');
           $table->string('title_english');
-           $table->text('thumbnail');
+                     $table->string('address_khmer');
+          $table->string('address_english');
+                       $table->string('description_khmer');
+          $table->string('description_english');
+             $table->text('thumbnail');
+                  $table->text('thumbnail');
+               $table->boolean('status');
            $table->integer('image_id')->unsigned();
             $table->timestamps();
+             $table->foreign('client_type_id')
+             ->reference('id')
+             ->on('client_types')
+             ->onDelete('cascade');
+                  $table->foreign('image_id')
+             ->reference('id')
+             ->on('images')
+             ->onDelete('cascade');
+           $table->timestamps();
         });
     }
 
